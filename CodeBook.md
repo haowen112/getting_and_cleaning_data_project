@@ -48,9 +48,12 @@ Source data is taken from UCI machine learning repository, data set is related t
 	- Create tidy data using the column condition
 	  `tidy_data <- train_test_combined_data[, mean_std_column]`
  6. **Change activity code to descriptive activity names**
+ 
 	 `tidy_data$activity <- activity_labels[tidy_data$activity, 2]`
+	 
  7. **Change data column names to descriptive names**
  
+
 	 `names(tidy_data) <- gsub("Acc", "Accelerometer", names(tidy_data))`
 	 
 	`names(tidy_data) <- gsub("Gyro", "Gyroscope", names(tidy_data))`
