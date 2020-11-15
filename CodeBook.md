@@ -44,9 +44,11 @@ Source data is taken from UCI machine learning repository, data set is related t
 
  5. **Extract only the measurement on mean and standard deviation for each measurement**
 	- grep only column with name contains mean and std
-	`mean_std_column <- grepl("subject|activity|mean|std", colnames(train_test_combined_data))`
+	
+		`mean_std_column <- grepl("subject|activity|mean|std", colnames(train_test_combined_data))`
 	- Create tidy data using the column condition
-	  `tidy_data <- train_test_combined_data[, mean_std_column]`
+	
+	  	`tidy_data <- train_test_combined_data[, mean_std_column]`
  6. **Change activity code to descriptive activity names**
  
 	 `tidy_data$activity <- activity_labels[tidy_data$activity, 2]`
