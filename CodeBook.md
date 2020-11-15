@@ -50,16 +50,29 @@ Source data is taken from UCI machine learning repository, data set is related t
  6. **Change activity code to descriptive activity names**
 	 `tidy_data$activity <- activity_labels[tidy_data$activity, 2]`
  7. **Change data column names to descriptive names**
+ 
 	 `names(tidy_data) <- gsub("Acc", "Accelerometer", names(tidy_data))`
-`names(tidy_data) <- gsub("Gyro", "Gyroscope", names(tidy_data))`
-`names(tidy_data) <- gsub("Mag", "Magnitude", names(tidy_data))`
-`names(tidy_data) <- gsub("^tBody", "TimeBody", names(tidy_data))`
-`names(tidy_data) <- gsub("^fBody", "FrequencyBody", names(tidy_data))`
-`names(tidy_data) <- gsub("-mean()", "Mean", names(tidy_data))`
-`names(tidy_data) <- gsub("-std()", "Accelerometer", names(tidy_data))`
-`names(tidy_data) <- gsub("-freq()", "Frequency", names(tidy_data))`
-`names(tidy_data) <- gsub("angle", "Angle", names(tidy_data))`
-`names(tidy_data) <- gsub("gravity", "Gravity", names(tidy_data))`
+	 
+	`names(tidy_data) <- gsub("Gyro", "Gyroscope", names(tidy_data))`
+	
+	`names(tidy_data) <- gsub("Mag", "Magnitude", names(tidy_data))`
+	
+	`names(tidy_data) <- gsub("^tBody", "TimeBody", names(tidy_data))`
+	
+	`names(tidy_data) <- gsub("^fBody", "FrequencyBody", names(tidy_data))`
+	
+	`names(tidy_data) <- gsub("-mean()", "Mean", names(tidy_data))`
+	
+	`names(tidy_data) <- gsub("-std()", "Accelerometer", names(tidy_data))`
+	
+	`names(tidy_data) <- gsub("-freq()", "Frequency", names(tidy_data))`
+	
+	`names(tidy_data) <- gsub("angle", "Angle", names(tidy_data))`
+	
+	`names(tidy_data) <- gsub("gravity", "Gravity", names(tidy_data))`
+	
  9. **Create another set of data grouped by activity and subject and their average of variables**
- `final_tidy_data <- tidy_data %>% group_by(subject, activity) %>% summarise_all(funs(mean))` 
+ 
+ 	`final_tidy_data <- tidy_data %>% group_by(subject, activity) %>% summarise_all(funs(mean))` 
+	
 
